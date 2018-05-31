@@ -25,6 +25,8 @@ func StartHttpServer(addr string) {
 func index(ctx *macaron.Context) {
 	ctx.HTML(200, "map_hz")
 }
+
+//解析前端请求参数，然后解析返回所需要的瓦片
 func gaode(ctx *macaron.Context) {
 	zoom := "L" + ctx.Params(":z")
 	x, _ := strconv.Atoi(ctx.Params(":x"))
