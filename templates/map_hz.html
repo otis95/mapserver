@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>mapserver</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+</head>
+<body id="body">
+    <div id="map" style="height:100vh; position: relative; z-index: 1;" ></div>
+	</div>
+</body>
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script type="text/javascript">
+	var amapNormalUrl = 'http://127.0.0.1:9934/788865972/{z}/{x}/{y}';
+	var amapNormalLayer = new L.TileLayer(amapNormalUrl, {
+	    minZoom : 1,
+	    maxZoom : 18,
+	    attribution : '自定义的地图服务'
+	});
+	
+	var mapCenter = new L.LatLng(30.2657600000,120.0978400000); 
+	var map = new L.Map('map', {
+	        center : mapCenter,
+			renderer: L.canvas(),
+	        zoom : 10,
+	        minZoom: 10,
+	        maxZoom: 10,
+	        layers : [ amapNormalLayer ],
+	});
+	
+    </script>
+</body>
+</html>
